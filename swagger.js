@@ -5,7 +5,7 @@ const doc = {
         title: 'Book Api',
         description: 'Book Api'
     },
-    host: 'localhost:3001',
+    host: 'localhost:300q',
     schemes: ['http', 'https']
 };
 
