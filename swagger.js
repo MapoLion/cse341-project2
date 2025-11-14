@@ -5,8 +5,8 @@ const doc = {
         title: 'Book Api',
         description: 'Book Api'
     },
-    host: 'localhost:300q',
-    schemes: ['http', 'https']
+    host: 'cse341-project2-books.onrender.com',
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';
