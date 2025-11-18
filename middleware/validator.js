@@ -1,23 +1,37 @@
 const validator = require('../helpers/validator');
 
 const validateBook = (req, res, next) => {
-    const valid = {
-        title: "required|string",
-        author: "required|string",
-        firstPublished: "string"
-    };
+  const rules = {
+    title: "required|string",
+    authors: "required|array",
+    firstPublished: "string"
+  };
 
-validator(req.body, valid, {}, (err, status) => {
+  runValidation(req, res, next, rules);
+};
+
+const validateVideo = (req, res, next) => {
+  const rules = {
+    title: "required|string",
+    director: "required|string",
+    year: "integer"
+  };
+
+  runValidation(req, res, next, rules);
+};
+
+const runValidation = (req, res, next, rules) => {
+  validator(req.body, rules, {}, (err, status) => {
     if (!status) {
-      res.status(412).send({
+      return res.status(412).send({
         success: false,
         message: 'Validation failed',
         data: err
       });
-    } else {
-      next();
     }
-});
+    next();
+  });
 };
 
-module.exports = { validateBook };
+
+module.exports = { validateBook, validateVideo };
