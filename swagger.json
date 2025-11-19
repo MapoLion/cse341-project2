@@ -41,7 +41,7 @@
               "type": "object",
               "properties": {
                 "title": { "example": "any" },
-                "authors": { "example": ["any"] },
+                "authors": { "example": "any" },
                 "firstPublished": { "example": "any" }
               }
             }
@@ -80,7 +80,7 @@
               "type": "object",
               "properties": {
                 "title": { "example": "any" },
-                "authors": { "example": ["any"] },
+                "authors": { "example": "any" },
                 "firstPublished": { "example": "any" }
               }
             }
