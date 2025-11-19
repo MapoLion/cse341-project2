@@ -3,7 +3,7 @@ const validator = require('../helpers/validator');
 const validateBook = (req, res, next) => {
   const rules = {
     title: "required|string",
-    author: "required|sting",
+    author: "required|string",
     firstPublished: "string"
   };
 
