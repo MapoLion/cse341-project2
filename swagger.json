@@ -80,7 +80,7 @@
               "type": "object",
               "properties": {
                 "title": { "example": "any" },
-                "authors": { "example": "any" },
+                "author": { "example": "any" },
                 "firstPublished": { "example": "any" }
               }
             }
