@@ -7,7 +7,7 @@ const getAll = async (req, res) => {
         const videos = 
         await mongodb
         .getDatabase()
-        .collection('tv-and-movies')
+        .collection('videos')
         .find()
         .toArray();
         res.status(200).json(videos);
@@ -23,7 +23,7 @@ const getSingle = async (req, res) => {
         const videos = 
             await mongodb
             .getDatabase()
-            .collection('tv-and-movies')
+            .collection('videos')
             .find({ _id: videoId })
             .toArray();
         if (!videos[0]) {
@@ -45,7 +45,7 @@ const createVideo = async (req, res) => {
         };
         const response = await mongodb
         .getDatabase()
-        .collection('tv-and-movies')
+        .collection('videos')
         .insertOne(video);
         if (response.acknowledged) {
             return res.status(201).json({ message: "Success: Your show/movie has been added to the library", id: response.insertedId });
@@ -68,7 +68,7 @@ const updateVideo = async (req, res) => {
 
     const response = 
     await mongodb.getDatabase()
-    .collection('tv-and-movies')
+    .collection('videos')
     .replaceOne({_id: videoId}, video);
 
     if (response.modifiedCount > 0) {
@@ -86,7 +86,7 @@ const deleteVideo = async (req, res) => {
         const videoId = new ObjectId(req.params.id);
         const response = await mongodb
             .getDatabase()
-            .collection('tv-and-movies')
+            .collection('videos')
             .deleteOne({ _id: videoId });
 
         if (response.deletedCount > 0) {

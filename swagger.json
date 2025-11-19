@@ -126,7 +126,7 @@
               "properties": {
                 "title": { "example": "any" },
                 "director": { "example": "any" },
-                "year": { "example": 2000 }
+                "year": { "example": "2000" }
               }
             }
           }
@@ -165,7 +165,7 @@
               "properties": {
                 "title": { "example": "any" },
                 "director": { "example": "any" },
-                "year": { "example": 2000 }
+                "year": { "example": "2000" }
               }
             }
           }

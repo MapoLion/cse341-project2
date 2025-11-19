@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'Book Api',
-        description: 'Book Api'
+        title: 'Books & Videos API',
+        description: 'API for managing books and video media'
     },
     host: 'cse341-project2-books.onrender.com',
     schemes: ['https']
