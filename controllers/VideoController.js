@@ -41,7 +41,10 @@ const createVideo = async (req, res) => {
         const video = {
             title: req.body.title,
             director: req.body.director,
-            year: req.body.year
+            year: req.body.year,
+            distributor: req.body.distributor,
+            genre: req.body.genre,
+            runtime: req.body.runtime
         };
         const response = await mongodb
         .getDatabase()
@@ -64,6 +67,9 @@ const updateVideo = async (req, res) => {
             title: req.body.title,
             director: req.body.director,
             year: req.body.year,
+            distributor: req.body.distributor,
+            genre: req.body.genre,
+            runtime: req.body.runtime
         };
 
     const response = 

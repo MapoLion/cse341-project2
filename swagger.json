@@ -10,10 +10,9 @@
   "schemes": ["https"],
   "paths": {
 
-
     "/": {
       "get": {
-        "description": "",
+        "description": "API root endpoint",
         "responses": {
           "200": { "description": "OK" }
         }
@@ -38,12 +37,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": { "example": "any" },
-                "author": { "example": "any" },
-                "firstPublished": { "example": "any" }
-              }
+              "$ref": "#/definitions/Book"
             }
           }
         ],
@@ -77,12 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": { "example": "any" },
-                "author": { "example": "any" },
-                "firstPublished": { "example": "any" }
-              }
+              "$ref": "#/definitions/Book"
             }
           }
         ],
@@ -122,12 +111,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": { "example": "any" },
-                "director": { "example": "any" },
-                "year": { "example": "2000" }
-              }
+              "$ref": "#/definitions/Video"
             }
           }
         ],
@@ -161,12 +145,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": { "example": "any" },
-                "director": { "example": "any" },
-                "year": { "example": "2000" }
-              }
+              "$ref": "#/definitions/Video"
             }
           }
         ],
@@ -188,6 +167,34 @@
         }
       }
     }
+  },
 
+
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "required": ["title", "author"],
+      "properties": {
+        "title": { "type": "string", "example": "any" },
+        "author": { "type": "string", "example": "any" },
+        "genre": { "type": "array", "items": { "type": "string" }, "example": ["any"] },
+        "pages": { "type": "integer", "example": 100 },
+        "publisher": { "type": "string", "example": "any" },
+        "year": { "type": "integer", "example": 2000 }
+      }
+    },
+
+    "Video": {
+      "type": "object",
+      "required": ["title", "director"],
+      "properties": {
+        "title": { "type": "string", "example": "any" },
+        "director": { "type": "string", "example": "any" },
+        "year": { "type": "integer", "example": 2000 },
+        "distributor": { "type": "string", "example": "any" },
+        "genre": { "type": "array", "items": { "type": "string" }, "example": ["any"] },
+        "runtime": { "type": "string", "example": "# minutes" }
+      }
+    }
   }
 }

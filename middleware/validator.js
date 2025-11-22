@@ -4,7 +4,10 @@ const validateBook = (req, res, next) => {
   const rules = {
     title: "required|string",
     author: "required|string",
-    firstPublished: "string"
+    genre: "array",
+    pages: "integer",
+    publisher: "string",
+    year: "integer"
   };
 
   runValidation(req, res, next, rules);
@@ -14,7 +17,10 @@ const validateVideo = (req, res, next) => {
   const rules = {
     title: "required|string",
     director: "required|string",
-    year: "integer"
+    year: "integer",
+    distributor: "string",
+    genre: "array",
+    runtime: "string"
   };
 
   runValidation(req, res, next, rules);

@@ -41,7 +41,10 @@ const createBook = async (req, res) => {
         const book = {
             title: req.body.title,
             author: req.body.author,
-            firstPublished: req.body.firstPublished
+            genre: req.body.genre,
+            pages: req.body.pages,
+            publisher: req.body.publisher,
+            year: req.body.year
         };
         const response = await mongodb
         .getDatabase()
@@ -63,7 +66,10 @@ const updateBook = async (req, res) => {
         const book = {
             title: req.body.title,
             author: req.body.author,
-            firstPublished: req.body.firstPublished,
+            genre: req.body.genre,
+            pages: req.body.pages,
+            publisher: req.body.publisher,
+            year: req.body.year
         };
 
     const response = 
