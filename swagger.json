@@ -178,9 +178,9 @@
         "title": { "type": "string", "example": "any" },
         "author": { "type": "string", "example": "any" },
         "genre": { "type": "array", "items": { "type": "string" }, "example": ["any"] },
-        "pages": { "type": "integer", "example": 100 },
+        "pages": { "type": "integer", "example": "#" },
         "publisher": { "type": "string", "example": "any" },
-        "year": { "type": "integer", "example": 2000 }
+        "year": { "type": "integer", "example": "####" }
       }
     },
 
@@ -190,7 +190,7 @@
       "properties": {
         "title": { "type": "string", "example": "any" },
         "director": { "type": "string", "example": "any" },
-        "year": { "type": "integer", "example": 2000 },
+        "year": { "type": "integer", "example": "####" },
         "distributor": { "type": "string", "example": "any" },
         "genre": { "type": "array", "items": { "type": "string" }, "example": ["any"] },
         "runtime": { "type": "string", "example": "# minutes" }
