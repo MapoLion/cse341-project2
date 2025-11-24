@@ -7,8 +7,8 @@ const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', videosController.getAll);
 router.get('/:id', videosController.getSingle);
-router.post('/', validator.validateVideo, videosController.createVideo);
-router.put('/:id', validator.validateVideo, videosController.updateVideo);
-router.delete('/:id', videosController.deleteVideo);
+router.post('/', isAuthenticated, validator.validateVideo, videosController.createVideo);
+router.put('/:id', isAuthenticated, validator.validateVideo, videosController.updateVideo);
+router.delete('/:id', isAuthenticated, videosController.deleteVideo);
 
 module.exports = router;

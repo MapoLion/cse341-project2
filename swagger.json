@@ -7,7 +7,7 @@
   },
   "host": "cse341-project2-books.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["s"],
   "paths": {
 
     "/": {

@@ -7,8 +7,8 @@ const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', booksController.getAll);
 router.get('/:id', booksController.getSingle);
-router.post('/', validator.validateBook, booksController.createBook);
-router.put('/:id', validator.validateBook, booksController.updateBook);
-router.delete('/:id', booksController.deleteBook);
+router.post('/', isAuthenticated, validator.validateBook, booksController.createBook);
+router.put('/:id', isAuthenticated, validator.validateBook, booksController.updateBook);
+router.delete('/:id', isAuthenticated, booksController.deleteBook);
 
 module.exports = router;

@@ -37,8 +37,14 @@ app
     .use(cors({ origin: '*' }));
     //.use('/', require('./routes/index.js'));
 
+
+
 // EXPRESS JSON
 app.use(express.json());
+
+//Putting this above the routes would overwrite the public folder route
+app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : 'Logged Out'); });
+app.use(express.static('public'));
 
 //ROUTES
 app.use('/', require('./routes'));
@@ -59,10 +65,11 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((obj, done) => {
     done(null, obj);
 });
-app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : 'Logged Out'); });
+
+
 
 app.get('/github/callback', passport.authenticate('github', { 
-    failureRedirect: 'api-docs', session: false}), 
+    failureRedirect: 'api-docs', session: false}), //
     (req, res) => {
     req.session.user = req.user;
     res.redirect('/');
